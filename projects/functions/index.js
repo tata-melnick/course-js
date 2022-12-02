@@ -66,10 +66,10 @@ function returnFnResult(fn) {
    console.log(f()); // выведет 13
  */
 function returnCounter(number) {
-  if (number === undefined) {
-    number = 0;
-  }
   return function Fn() {
+    if (number === undefined) {
+      number = 0;
+    }
     number = number + 1;
     return number;
   };
@@ -84,8 +84,8 @@ function returnCounter(number) {
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray() {
-  return [...arguments];
+function returnArgumentsArray(...args) {
+  return args;
 }
 
 /*
